@@ -1,6 +1,7 @@
 /_build
 /.credo
 /.elixir_ls/
+/.lexical
 /.idea
 /.vscode
 /cover

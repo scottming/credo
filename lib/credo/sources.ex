@@ -22,6 +22,10 @@ defmodule Credo.Sources do
   """
   def find(exec)
 
+  def find(%Execution{source_files: source_files}) when source_files != [] do
+    source_files
+  end
+
   def find(%Execution{read_from_stdin: true, files: %{included: [filename]}}) do
     filename
     |> source_file_from_stdin()

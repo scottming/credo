@@ -59,6 +59,7 @@ defmodule Credo.Execution do
             halted: false,
             config_files_pid: nil,
             source_files_pid: nil,
+            source_files: [],
             issues_pid: nil,
             timing_pid: nil,
             skipped_checks: nil,
@@ -500,8 +501,7 @@ defmodule Credo.Execution do
   @doc false
   def put_source_files(exec, source_files) do
     ExecutionSourceFiles.put(exec, source_files)
-
-    exec
+    %{exec | source_files: source_files}
   end
 
   # Issues
